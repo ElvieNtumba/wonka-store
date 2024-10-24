@@ -2,6 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
+// import Filter from '../components/Filter';
+// import logo from '../assets/logo2.png'; // Uncomment if you have a logo
 
 const Header = () => {
   return (
