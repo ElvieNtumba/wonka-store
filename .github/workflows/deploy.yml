@@ -1,32 +1,18 @@
-name: Deploy to S3
-
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-
-    - name: List files in the working directory
-      run: ls -al /home/runner/work/wonka-store/wonka-store
-    
-
-    - name: Navigate to project directory
-      run: cd wonkanet-store  
-
     - name: Install dependencies
       run: npm install
-      working-directory: ./wonkanet-store 
-
     - name: Build project
       run: npm run build
-
     - name: Deploy to S3
       uses: jakejarvis/s3-sync-action@master
       with:
